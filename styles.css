@@ -7,8 +7,7 @@
   top: 0;
   left: 0;
   overflow-x: hidden;
-  padding-left: 25px;
-  margin-right: 50px;
+  padding-left: 20px;
   background-color: #111;
 }
 
@@ -54,6 +53,7 @@
 #main {
   transition: margin-left .5s;
   padding: 20px;
+  left: 50px;
 }
 
 @media screen and (max-height: 450px) {
