@@ -1,5 +1,3 @@
-text-decoration: none;
-
 .sidenav {
   height: 100%;
   width: 0;
@@ -42,3 +40,5 @@ text-decoration: none;
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+text-decoration: none;
