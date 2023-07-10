@@ -1,4 +1,5 @@
 function openNav() {
+  alert("Test");
   document.getElementById("mySidenav").style.width = "250px";
 }
 
