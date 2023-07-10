@@ -4,10 +4,7 @@
   position: fixed;
   font-size: 25px;
   top: 0;
-  left: 0;
   background-color: #111;
-  overflow-x: hidden;
-  padding-top: 60px;
 }
 
 .sidenav {
