@@ -3,11 +3,11 @@
   height: 100%;
   width: 50px;
   position: fixed;
-  font-size: 25px;
+  font-size: 40px;
   top: 0;
   left: 0;
   overflow-x: hidden;
-  padding-left: 10px;
+  padding-left: 25px;
   background-color: #111;
 }
 
