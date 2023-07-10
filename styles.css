@@ -9,6 +9,7 @@
   overflow-x: hidden;
   padding-left: 20px;
   background-color: #111;
+  transition: .5s;
 }
 
 .sidenav {
