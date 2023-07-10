@@ -5,6 +5,8 @@
   position: fixed;
   font-size: 25px;
   top: 0;
+  overflow-x: hidden;
+  padding-left: 10px;
   background-color: #111;
 }
 
