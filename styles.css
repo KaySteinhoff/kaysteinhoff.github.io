@@ -1,6 +1,7 @@
 .sidenavbtn
 {
   height: 100%;
+  width: 50px;
   position: fixed;
   font-size: 25px;
   top: 0;
