@@ -1,6 +1,6 @@
 function openNav() {
   alert("Test");
-  document.getElementById("MainSidenav").style.width = "250px";
+  document.getElementById("MainSidenav").style.width = "100%";
 }
 
 function closeNav() {
