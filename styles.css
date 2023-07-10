@@ -11,11 +11,17 @@
   transition: 0.5s;
 }
 
+.invisLink
+{
+  text-decoration: none;
+}
+
 .sidenav a {
   padding: 8px 8px 8px 32px;
   font-size: 25px;
   color: #818181;
   display: block;
+  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -40,5 +46,3 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-text-decoration: none;
