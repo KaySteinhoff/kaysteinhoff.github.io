@@ -1,0 +1,21 @@
+.description {
+	margin-top: 15x;
+	border-radius: 25px;
+	background-color: #FFFFFF22;
+	width: 800px;
+	height: 650px;
+}
+
+.description p {
+	font-family: 'ObscuraRegular';
+	color: #FFFFFF;
+	font-size: 25px;
+}
+
+.title {
+	font-family:'ObscuraRegular';
+	color: #FFFFFF;
+	font-size:120px;
+	margin-top: 60px;
+	margin-bottom: 15px;
+}
