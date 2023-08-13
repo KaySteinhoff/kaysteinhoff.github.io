@@ -1,0 +1,38 @@
+.description {
+	margin-top: 15x;
+	margin-left: -50px;
+	border-radius: 25px;
+	background-color: #FFFFFF22;
+	max-width: 650px;
+	min-height: 650px;
+}
+
+.description p {
+	max-width: 500px;
+	font-family: 'ObscuraRegular';
+	color: #FFFFFF;
+	font-size: 35px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/*Mobile opptimization*/
+@media screen and (max-width: 1080px) {
+	.description {
+		margin-top: 45px;
+		margin-left: -50px;
+		border-radius: 25px;
+		background-color: #FFFFFF22;
+		max-width: 900px;
+		min-height: 650px;
+	}
+
+	.description p {
+		max-width: 750px;
+		font-family: 'ObscuraRegular';
+		color: #FFFFFF;
+		font-size: 70px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+}
