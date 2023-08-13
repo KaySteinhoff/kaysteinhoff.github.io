@@ -52,7 +52,7 @@ input[type=submit]:hover {
 }
 
 /*Mobile opptimization*/
-@media viewport and (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
 	
 	form label {
 		color: #FFF;
