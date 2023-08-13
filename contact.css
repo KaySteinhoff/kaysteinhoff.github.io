@@ -1,0 +1,32 @@
+form label {
+	color: #FFF;
+	font-family: 'ObscuraRegular';
+	font-size: 35px;
+}
+
+input[type=text] {
+	border-radius: 0px;
+	border: 0px;
+	height: 20px;
+}
+
+input[type=submit] {
+	border-radius: 0px;
+	border: 0px;
+	height: 20px;
+	background-image: linear-gradient(#88190e, #4c150e);
+	
+	font-family: 'ObscuraRegular';
+	font-size: 35px;
+	height: auto;
+	width: 125px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.container div {
+	margin: 10px;
+}
