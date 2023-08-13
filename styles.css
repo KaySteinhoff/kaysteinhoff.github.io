@@ -119,7 +119,7 @@ body {
 }
 
 /*Mobile opptimization*/
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 20px) {
 	
 	.backgroundImage {
 		z-index: -100;
