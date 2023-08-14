@@ -1,10 +1,5 @@
 <?php
 
-if(!isset($_GET['submit']))
-{
-	echo "Submit the form!"; 
-}
-
 $firstName = $_GET['firstName'];
 $lastName = $_GET['lastName'];
 $email = $_GET['email'];
