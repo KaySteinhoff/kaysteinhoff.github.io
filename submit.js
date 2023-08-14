@@ -1,4 +1,4 @@
-$('#gform').on('submit', function(e) {
-	$('#gform *').fadeOut(2000);
-	$('#gform').prepend('Your submission has been processed...');
+document.getElementById("gform").on('submit', function(e) {
+	document.getElementById("gform").fadeOut(2000);
+	document.getElementById("gform").prepend('Your submission has been processed...');
 });
