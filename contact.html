@@ -34,10 +34,12 @@
 			</div>
 			
 			<center id="center">
-				<form id="gform" name="gform"
-				action="https://docs.google.com/forms/d/e/1FAIpQLSeR3hMIhF_vMOZtjbtBL4CHOUDj4ZN26RKA7OBNq7H1aV1-5A/formResponse?" 
-				enctype="text/plain" 
-				target="hidden_iframe" >
+				<form 
+					id="gform" 
+					name="gform" 
+					action="https://docs.google.com/forms/d/e/1FAIpQLSeR3hMIhF_vMOZtjbtBL4CHOUDj4ZN26RKA7OBNq7H1aV1-5A/formResponse?" 
+					enctype="text/plain" 
+					target="hidden_iframe" >
 					<div class="container">
 						<div>
 							<label>First name</label><br>
@@ -55,7 +57,7 @@
 					<label>Most embarrassing moment<label/><br>
 					<textarea id="entry.1068852150" name="entry.1068852150" placeholder="Sharted myself at school" rows="5" style="width: 275px; resize: none;" ></textarea><br><br>
 					
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit" onclick="sendEmail()">
 				<form/>
 				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 			<center/>
