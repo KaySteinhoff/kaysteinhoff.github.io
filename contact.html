@@ -6,7 +6,13 @@
 		<link rel="stylesheet" href="contact.css"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script src="index.js"></script>
-		<script src="submit.js"></script>
+		<script type="text/javascript">var submitted=false;</script>
+		<script type="text/javascript">
+		$('#gform').on('submit', function(e) {
+		  $('#gform *').fadeOut(2000);
+		  $('#gform').prepend('Your submission has been processed...');
+		  });
+		</script>
 	</head>
 	<body>
 		<div id="sidenavContent" class="sidenav">
