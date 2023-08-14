@@ -8,6 +8,8 @@ function closeNav() {
 
 function sendEmail()
 {
+	document.forms[0].submit();
+	
 	document.getElementById("gform").remove();
 	
 	var text = document.createElement("p");
