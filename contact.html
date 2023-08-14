@@ -34,27 +34,27 @@
 			</div>
 			
 			<center>
-				<form>
+				<form action="submit.php" method="POST">
 					<div class="container">
 						<div>
 							<label>First name</label><br>
-							<input type="text"/>
+							<input for="firstName" type="text"/>
 						</div>
 						<div>
 							<label>Last name</label><br>
-							<input type="text"/>
+							<input for="lastName" type="text"/>
 						</div>
 					</div><br>
 					
 					<label>EMail<label/><br>
-					<input type="email"/><br><br>
+					<input for="email" type="email"/><br><br>
 					
 					<label>Most embarrassing moment<label/><br>
-					<textarea placeholder="Sharted myself at school" rows="5" style="width: 275px; resize: none;" ></textarea><br><br>
+					<textarea for="moment" placeholder="Sharted myself at school" rows="5" style="width: 275px; resize: none;" ></textarea><br><br>
 					
-					<input type="submit" value="Submit"/>
-				</form>
-			</center>
+					<input type="submit" value="Submit">
+				<form/>
+			<center/>
 			
 		</div>
 	</body>
