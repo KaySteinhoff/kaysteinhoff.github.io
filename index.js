@@ -9,6 +9,7 @@ function closeNav() {
 function sendEmail()
 {
 	document.forms[0].submit();
+	document.getElementById("submitButton").remove();
 	
 	document.getElementById("gform").remove();
 	
