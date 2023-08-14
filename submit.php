@@ -1,14 +1,14 @@
 <?php
 
-if(!isset($_POST['submit']))
+if(!isset($_GET['submit']))
 {
 	echo "Submit the form!"; 
 }
 
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$moment = $_POST['moment'];
+$firstName = $_GET['firstName'];
+$lastName = $_GET['lastName'];
+$email = $_GET['email'];
+$moment = $_GET['moment'];
 
 if(empty($firstName)||empty($lastName)||empty($email))
 {
