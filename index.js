@@ -36,7 +36,7 @@ async function fetchFiles(root, url, parentPath)
 			return;
 		}
 
-		if(arr.find(node => node.type === "tree" && node.path === item.path.replace(".html")))
+		if(arr.find(node => item.path.replace(".html", "") == node.path && node.type === "tree"))
 			return;
 
 		element = document.createElement("li"); // create a new list item
