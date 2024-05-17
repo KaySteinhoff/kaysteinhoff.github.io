@@ -36,13 +36,24 @@ async function fetchFiles(root, url, parentPath)
 			return;
 		}
 
+		if(arr.find(node => node.type === "tree" && node.path === item.path.replace(".html")))
+			return;
+
 		element = document.createElement("li"); // create a new list item
 		var a = document.createElement("a");
 		a.href = parentPath + item.path;
-		a.appendChild(document.createTextNode(item.path));
+		a.appendChild(document.createTextNode(item.path.replace(".html", "")));
 		element.appendChild(a); // append the text to the li
 		ul.appendChild(element); // append the list item to the ul
 	});
 }
 
-fetchFiles(sidebar, "https://api.github.com/repos/KaySteinhoff/kaysteinhoff.github.io/git/trees/main", "docFiles/");
+async function buildTree()
+{
+	var data = await fetch("https://api.github.com/repos/KaySteinhoff/kaysteinhoff.github.io/git/trees/main").then(res => res.json());
+	var root = data.tree.find(node => node.path === "docFiles");
+	if(root)
+		fetchFiles(sidebar, root.url, "docFiles/");
+}
+
+buildTree();
