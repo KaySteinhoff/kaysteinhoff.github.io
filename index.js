@@ -1,6 +1,11 @@
 let sidebar = document.getElementById("sidebarBody");
 let content = document.getElementById("content");
 
+function loadPage(pagePath)
+{
+	console.log(pagePath);
+}
+
 function onSidebarClick()
 {
 	if(sidebar.style.width )
@@ -53,7 +58,7 @@ async function buildTree()
 	var data = await fetch("https://api.github.com/repos/KaySteinhoff/kaysteinhoff.github.io/git/trees/main").then(res => res.json());
 	var root = data.tree.find(node => node.path === "docFiles");
 	if(root)
-		fetchFiles(sidebar, root.url, "docFiles/");
+		fetchFiles(sidebar, root.url, "");
 }
 
 buildTree();

@@ -2,36 +2,21 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css"/>
-		<title>Mount & Blade II Bannerlord Modding documentation</title>
+		<title>Mount & Blade II Bannerlord unofficial documentation</title>
+		<link rel="icon" type="image/x-icon" href="icon.ico"/>
 	</head>
 	<body>
 		<div class="sidebar" id="sidebarBody">
 		</div>
-		<div class="siteContent" id="content">
+		<div class="siteContent" id="content" height="100%">
 			<div class="navbar">
-				<a href="#" id="sidebar" onclick="onSidebarClick()">...</a>
-				<a href="#" style="color: #FFF">Home</a>
-				<a href="#">How to contribute</a>
+				<a class="unselectable" id="sidebar" onclick="onSidebarClick()">...</a>
+				<a class="unselectable" onclick="loadPage('Lol')">Home</a>
+				<a class="unselectable" onclick="loadPage('HowToContribute.html')">How to contribute</a>
 			</div>
 			
-			<h1 class="centered">
-				Welcome
-			</h1>
-			
-			<h3 style="margin-top: 50px" class="centered">
-				This website was created to provide a more comprehensive documentation of the dlls used by MB 2 Bannerlord. All entries contain a practical example to further show how certain features are used.
-			</h3>
-			
-			<h1 class="centered" style="margin-top: 80px;">
-				Getting started
-			</h1>
-			
-			<h3 class="centered" style="margin: 20px; margin-top: 50px;">
-				To get started you can use <a style="display: contents" href="https://docs.bannerlordmodding.com/_tutorials/basic-csharp-mod.html">this</a> link if you work on Windows. 
-				Should you use Linux I've made <a style="display: contents" href="https://forums.taleworlds.com/index.php?threads/how-to-setup-your-modding-environment-on-linux-tutorial.462746/">this</a> Tutorial on how you can setup your modding environment on there. 
-				Keep in mind though that you won't be able to perform any OS specific operations like reading/writing files or fetching all files in a directory as MB 2 Bannerlord was made using the .NET Framework 4.7.2 and you're going to compile with .NET Core 6.0+. 
-				This will cause a version mismatch on OS operations. Making logical changes like adding listeners, adding buttons/menus is all fine though.
-			</h3>
+			<iframe src="home.html" id="contentFrame" width="100%" style="position: absolute; height: 100%; border: none">
+			</iframe>
 		<div>
 	</body>
 	<script src="index.js"></script>
