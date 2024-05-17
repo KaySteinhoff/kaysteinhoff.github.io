@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Marauder's Shadows</title>
-		<link rel="stylesheet" href="styles.css"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="index.js"></script>
+		<link rel="stylesheet" href="style.css"/>
+		<title>Mount & Blade II Bannerlord Modding documentation</title>
 	</head>
 	<body>
-		<div id="sidenavContent" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav();">&times;</a>
-			<a href="index.html">Home</a>
-			<a href="about.html">About us</a>
-			<a href="contact.html">Contact</a>
+		<div class="sidebar" id="sidebarBody">
+			<ul>
+				<details>
+					<summary><a href="TaleWorlds.CampaignSystem/CampaignSystem.html">TaleWorlds.CampaignSystem</a></summary>
+					<ul>
+						<details>
+							<summary><a href="TaleWorlds.CampaignSystem/CampaignEvents.html">CampaignEvents</a></summary>
+							<ul>
+								<li><a href="#">OnAlleyCaptured</a></li>
+								<li><a href="#">OnBeforeMainHeroDied</a></li>
+								<li><a href="#">OnBeforeHeroKilled</a></li>
+							</ul>
+						</details>
+					</ul>
+				</details>
+				<details>
+					<summary><a href="#">TaleWorlds.Core</a></summary>
+				</details>
+			</ul>
 		</div>
-				
-		<div id="main">
-			<div class="header">
-				<div style="width: 40px">
-					<div id="sidernavMain" class="sidenavBtn">
-						<div onclick="openNav();" class="sidenavIconContainer">
-							<div class="sidenavIconElement"></div>
-							<div class="sidenavIconElement"></div>
-							<div class="sidenavIconElement"></div>
-						</div>
-					</div>
-				</div>
-				<p>Home</p>
+		<div class="siteContent" id="content">
+			<div class="navbar">
+				<a href="#" id="sidebar" onclick="onSidebarClick()">...</a>
+				<a href="#" style="color: #FFF">Home</a>
+				<a href="#">How to contribute</a>
 			</div>
 			
-			<center>
-				<p class="title">
-					MARAUDER'S SHADOWS
-				</p>
-			</center>
+			<h1 class="centered">
+				Welcome
+			</h1>
 			
-			<div style="margin-left: 150px ; margin-top: 50px">
-				<p class="text" style="font-size: 55px">
-					GEAR UP RAIDER!
-				</p>
-				<p class="text" style="margin-left: 100px">
-					Are you ready to board the enemy ship? Are you ready to see some epic gun fights and then die because of input lag?<br>
-					<br>
-					Or are you a loot goblin, searching every corner for something one of us didn't see yet?<br>
-					<br>
-					Do you want to be a rat, waiting 15 minutes in a corner and then killing the enemy when they're head down, ass up looting someone?<br>
-					<br>
-					Because we have it all. No matter your play style we have someone to support you when you really need that Hello Kitty band aid.
-				</p>
-			</div>
+			<h3 style="margin-top: 50px" class="centered">
+				This website was created to provide a more comprehensive documentation of the dlls used by MB 2 Bannerlord. All entries contain a practical example to further show how certain features are used.
+			</h3>
 			
-			<div class="bgWrapper">
-				<img class="backgroundImage" src="BG_v2.png"/>
-			</div>
-		</div>
+			<h1 class="centered" style="margin-top: 80px;">
+				Getting started
+			</h1>
+			
+			<h3 class="centered" style="margin: 20px; margin-top: 50px;">
+				To get started you can use <a style="display: contents" href="https://docs.bannerlordmodding.com/_tutorials/basic-csharp-mod.html">this</a> link if you work on Windows. 
+				Should you use Linux I've made <a style="display: contents" href="https://forums.taleworlds.com/index.php?threads/how-to-setup-your-modding-environment-on-linux-tutorial.462746/">this</a> Tutorial on how you can setup your modding environment on there. 
+				Keep in mind though that you won't be able to perform any OS specific operations like reading/writing files or fetching all files in a directory as MB 2 Bannerlord was made using the .NET Framework 4.7.2 and you're going to compile with .NET Core 6.0+. 
+				This will cause a version mismatch on OS operations. Making logical changes like adding listeners, adding buttons/menus is all fine though.
+			</h3>
+		<div>
 	</body>
+	<script src="index.js"></script>
 </html>

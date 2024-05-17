@@ -1,22 +1,48 @@
-function openNav() {
-  document.getElementById("sidenavContent").style.width = "250px";
-}
+let sidebar = document.getElementById("sidebarBody");
+let content = document.getElementById("content");
 
-function closeNav() {
-  document.getElementById("sidenavContent").style.width = "0";
-}
-
-function sendEmail()
+function onSidebarClick()
 {
-	document.forms[0].submit();
-	document.getElementById("submitButton").remove();
-	
-	document.getElementById("gform").remove();
-	
-	var text = document.createElement("p");
-	text.appendChild(document.createTextNode("Thanks for applying to Marauder's Shadows!"));
-	text.classList.add("text");
-	text.style.marginLeft="-50px";
-	
-	document.getElementById("center").appendChild(text);
+	if(sidebar.style.width )
+	{
+		sidebar.style.width  = null;
+		content.style.marginLeft = null;
+	}else{
+		sidebar.style.width = "300px";
+		content.style.marginLeft = "300px";
+	}
 }
+
+async function fetchFiles(root, url, parentPath)
+{
+	var data = await fetch(url).then(res => res.json());
+	var arr = data.tree;
+	var ul = document.createElement("ul");
+	var element;
+
+	root.appendChild(ul); // append the created ul to the root
+
+	arr.forEach(function(item) {
+		if (item.type != "blob") { // if it's an array
+			element = document.createElement("details");
+			ul.appendChild(element);
+			var sum = document.createElement("summary");
+			var a = document.createElement("a");
+			a.appendChild(document.createTextNode(item.path));
+			a.href = parentPath + item.path + ".html";
+			sum.appendChild(a);
+			element.appendChild(sum);
+			fetchFiles(element, item.url, parentPath + item.path + "/"); // call arrToUl with the li as the root
+			return;
+		}
+
+		element = document.createElement("li"); // create a new list item
+		var a = document.createElement("a");
+		a.href = parentPath + item.path;
+		a.appendChild(document.createTextNode(item.path));
+		element.appendChild(a); // append the text to the li
+		ul.appendChild(element); // append the list item to the ul
+	});
+}
+
+fetchFiles(sidebar, "https://api.github.com/repos/KaySteinhoff/ToC/git/trees/main", "docFiles/");
