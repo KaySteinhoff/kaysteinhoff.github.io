@@ -45,4 +45,4 @@ async function fetchFiles(root, url, parentPath)
 	});
 }
 
-fetchFiles(sidebar, "https://api.github.com/repos/KaySteinhoff/ToC/git/trees/main", "docFiles/");
+fetchFiles(sidebar, "https://api.github.com/repos/KaySteinhoff/kaysteinhoff.github.io/git/trees/main", "docFiles/");
