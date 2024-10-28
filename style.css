@@ -60,9 +60,8 @@ body
   font-size: 5vh;
 }
 
-/* Change the link color to #111 (black) on hover */
 .headerItem a:hover {
-  background-color: #111;
+  background-color: #222;
 }
 
 .centeredDiv {
@@ -94,5 +93,13 @@ body
 }
 
 .optionGridItem a:hover {
-	background-color: #0a400a;
+	background-color: #8080D0;
+}
+
+a {
+	font-family: Arial;
+}
+
+p {
+	font-family: Arial;
 }

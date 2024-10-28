@@ -1,11 +1,3 @@
-var userLocation;
-
-function enableUserInfo()
-{
-	document.getElementById('userInfo').removeAttribute('hidden');
-	document.getElementById('userLocationColumn').setAttribute('hidden', 'hidden');
-}
-
 function populateUser()
 {
 	var nameObj = document.getElementById('userName');
