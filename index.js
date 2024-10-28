@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		var helpObj = document.getElementById('callHelp');
 		if(helpObj != undefined)
 			helpObj.remove();
+		var adminObj = document.getElementById('adminFuncs');
+		if(adminObj != undefined)
+			adminObj.remove();
 	}
 	if(user != null && user.type != UserType.Admin)
 	{
