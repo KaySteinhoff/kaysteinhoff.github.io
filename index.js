@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		if(helpObj != undefined)
 			helpObj.remove();
 	}
+	if(user != null && user.type != UserType.Admin)
+	{
+		var adminObj = document.getElementById('adminFuncs');
+		if(adminObj != undefined)
+			adminObj.remove();
+	}
 	if(user != null)
 	{
 		var loginObj = document.getElementById('login');
