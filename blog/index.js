@@ -11,7 +11,10 @@ function fetchBlogs()
 		}
 		return response.json();
 	}).then(data => {
-		console.log(data);
+		const sortedBlogs = data.blogs.sort(
+			(a, b) => new Intl.DateTimeFormat('en-US').format(new Date(a.Date)) - new Intl.DateTimeFormat('en-US').format(new Date(b.Date))
+		);
+		console.log(sortedBlogs[0]);
 	}).catch(e => {
 		console.log(e);
 	});
