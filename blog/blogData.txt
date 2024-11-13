@@ -1,7 +1,7 @@
 {
 	"blogs" : [
 		{
-			"BlogFile" : "blog1.html",
+			"BlogFile" : "blogs/howToMakeASimpleScalableCalculator.html",
 			"Title" : "How to make a simple, scalable calculator",
 			"Date" : "2024.11.13"
 		}
