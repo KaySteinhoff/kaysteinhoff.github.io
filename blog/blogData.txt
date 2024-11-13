@@ -1,1 +1,8 @@
-How to make a simple, scalable calculator <blog1.html>
+{
+	"blogs" : [
+		"blog1.html" : { 
+			"Title" : "How to make a simple, scalable calculator",
+			"Date" : "2024.11.13"
+		}
+	]
+}
