@@ -1,8 +1,63 @@
 body {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
 	background-color: #333;
 }
 
-.centered {
+p {
+	font-family: Arial;
+	font-size: 2em;
+	color: #fff;
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+}
+
+a {
+	font-family: Arial;
+	font-size: 2em;
+	color: #fff;
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+	text-decoration: none;
+	user-select: none;
+}
+
+.itemList {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	display: flex;
+	width: 100%; 
+	min-height: 25px; 
+	background-color: #222; 
+	top: 0px; 
+	align-items: center;
+}
+
+.itemListChild {
+	padding: 3px;
+	margin-right: 0.1em;
+}
+
+.itemListChild:hover {
+	background-color: #080;
+}
+
+.centerH {
 	margin-left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+.centerV {
+	margin-top: 25%;
+	transform: translate(0%, -50%);
+}
+
+.center {
+	margin-left: 50%;
+	margin-top: 25%;
 	transform: translate(-50%, -50%);
 }
