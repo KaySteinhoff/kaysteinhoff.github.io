@@ -3,6 +3,7 @@ body {
 	border: 0px;
 	padding: 0px;
 	background-color: #333;
+	top: 0px;
 }
 
 p {
@@ -60,4 +61,8 @@ a {
 	margin-left: 50%;
 	margin-top: 25%;
 	transform: translate(-50%, -50%);
+}
+
+.content {
+	flex: 1 0 auto;
 }
