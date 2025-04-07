@@ -4,6 +4,7 @@
 		<link rel="icon" href="PACE_icon.ico">
 		<link rel="stylesheet" href="styles.css">
 		<title>The PACE game engine</title>
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 		<script src="index.js"></script>
 	</head>
 	<body>
@@ -14,12 +15,31 @@
 			<a class="navbar-button" href="#">About</a>
 			<img src="PACE_icon.ico" style="width: 4.5em; height: 4.5em; margin: auto; float: right; margin-right: 0"/>
 		</div>
-		<div id="SideBar">
-		</div>
-		<div id="MarkdownViewer" class="markdown-viewer">
-			<script>
-				document.getElementById("MarkdownViewer").insertAdjacentHTML( "beforeend", mmd("# Test"));
-			</script>
+		<div style="display: flex">
+			<div id="SideBar" class="sidebar">
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PACE.md');">PACE</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/IPADraw.md')">IPADraw</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/IPALight.md')">IPALight</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/IPACollider.md')">IPACollider</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/IPATrack.md')">IPATrack</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAScene.md')">PAScene</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PACamera.md')">PACamera</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAMesh.md')">PAMesh</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAMaterial.md')">PAMaterial</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAShader.md')">PAShader</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PATransform.md')">PATransform</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAAreaLight.md')">PAAreaLight</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PACEInterfaces.md')">PACEInterfaces</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAFont.md')">PAFont</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAText.md')">PAText</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PATexture.md')">PATexture</p>
+				<p class="sidebar-button" onclick="loadDocMd('https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PAViewMode.md')">PAViewMode</p>
+			</div>
+			<div id="MarkdownViewer" class="markdown-viewer" style="margin: 3em">
+				<script>
+					loadDocMd("https://raw.githubusercontent.com/KaySteinhoff/PACE/master/doc/PACE.md");
+				</script>
+			</div>
 		</div>
 	</body>
 </html>
