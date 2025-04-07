@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="PACE_icon.ico">
+		<link rel="stylesheet" href="styles.css">
+		<title>The PACE game engine</title>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="NavBar" class="navbar">
+			<a class="navbar-button" href="index.html">Home</a>
+			<a class="navbar-button" href="https://www.github.com/KaySteinhoff/PACE">GitHub</a>
+			<a class="navbar-button" href="#">Documentation</a>
+			<a class="navbar-button" href="#">About</a>
+			<img src="PACE_icon.ico" style="width: 4.5em; height: 4.5em; margin: auto; float: right; margin-right: 0"/>
+		</div>
+		<div id="SideBar">
+		</div>
+		<div id="MarkdownViewer" class="markdown-viewer">
+			<script>
+				document.getElementById("MarkdownViewer").insertAdjacentHTML( "beforeend", mmd("# Test"));
+			</script>
+		</div>
+	</body>
+</html>
