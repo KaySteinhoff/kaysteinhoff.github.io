@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Welcome to my blog</title>
+		<title>How to make a simple, scalable calculator</title>
 		<link rel="stylesheet" href="../style.css">
 		<link rel="icon" type="image/png" href="../blogLogo.png">
 		<script type="text/javascript" src="../index.js"></script>
@@ -13,11 +13,45 @@
 				<a class="itemListChild" href="../faq.html">FAQ</a>
 				<a class="itemListChild" style="margin-left: auto; margin-right: 0px" href="#" onclick="searchBlogs()">Search Blogs</a>
 			</div>
-			<div class="centerH" style="width: 80%; margin-top: 5em; height: 1000px;">
+			<div class="centerH content" style="width: 80%; margin-top: 5em;">
 				<p class="centerH" style="display: inline flex; margin-bottom: 3em">How to make a simple, scalable calculator</p>
 				<p>
-					
+					I recently tried to find some refrence code on the web when making my own command line calculator. This is when I realized that there are only very few and far between resources for anything that 
+					goes above the beginner calculator with the whole nine yards of "Please enter first number", "Please enter te second number", "Please enter the operation" or any variation of this concept.
+					This lead me to put in a lot more work than I though I'd needed as I thought there had to be *some* useful refrences but apparently not. So here I go: an introduction on how make a proper but still simple calculator.
 				</p>
+
+				<p>Intoduction</p>
+				<p>
+					This is not a tutorial made for beginners but I think even if you don't understand every single thing the calculator does it is still good practice to read and see them so you have some understanding of what they mean and where an example use case for them is.
+					That being said you're going to need to have an intermediate understanding of binary trees(see? One technical word you can research), lexical analyzation and itterative processes wether they be created through for loops or recursive functions.
+					If you don't I will try to explain some basics of them but this isn't a tutorial about them but the product we create with them. Thus the explaneintions won't have be in great detail.
+				</p>
+				
+				<p>Setup</p>
+				<p>
+					Now for my setup I've used gccand the nano text editor but any compiler and editor will do.
+					The only other thing worth mentioning is that I've used my own *very* little string library which will supply me with functions to substring, compare and all the other great stuff. It's nothing impressive by far but it's all I need and you can check out the source code for it in the repo as well.
+				</p>
+				
+				<p>The first step: Lexical analyzation</p>
+				<p>
+					Our first step in creating a proper calculator is to lexically analyze the equation we have to process. What is lexcal analyzation? I'm glad you asked! It's actually rather simple: You break down the string into tokens which can be read way more easily in the next step.
+					This is also the first step towards building an interpreter but our tokens will be simpler as we have very limited range of symbols that we'll use.
+					An example would be:
+				</p>
+				<div class="centerH" style="width: 70%; border: 1em; background-color: #222">
+					<p>3+3</p>
+					<p>
+					{ TokenType: Number, Value: '3' }
+					</p>
+					<p>
+					{ TokenType: Plus, Value: '+' }
+					</p>
+					<p>
+					{ TokenType: Number, Value: '3' }
+					</p>
+				</div>
 			</div>
 			<div id="footer" style="flex-shrink: 0; width: 100%; background-color: #222">
 				<div style="display: grid; grid-column-start: 1; grid-column-end: 3; min-height: 10em">
