@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="google-site-verification" content="m0zY3a4pRmrfI-NoLDk6GRIAawW1-9F8AVUdH1vunaI" />
+		<link rel="icon" href="PACE_icon.ico">
+		<link rel="stylesheet" href="styles.css">
+		<title>The PACE game engine</title>
+		<script src="syntaxHighlight.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<!-- div id="MenuToggle" class="navbar-button" style="vertical-align: middle; display: inline block" onclick="toggleNavBar();">
+			<hr style="color: white; width: 3em; height: 0.3em; background-color: white; margin: 0.3em; border-radius: 0.3em; display: inline block;"></hr>
+			<hr style="color: white; width: 3em; height: 0.3em; background-color: white; margin: 0.3em; border-radius: 0.3em; display: inline block;"></hr>
+			<hr style="color: white; width: 3em; height: 0.3em; background-color: white; margin: 0.3em; border-radius: 0.3em; display: inline block;"></hr>
+		</div -->
+		<div id="NavBar" class="navbar">
+			<a class="navbar-button" href="index.html">Home</a>
+			<a class="navbar-button" href="https://www.github.com/KaySteinhoff/PACE">GitHub</a>
+			<a class="navbar-button" href="docs.html">Documentation</a>
+			<a class="navbar-button" href="#">About</a>
+			<a class="navbar-button" href="#">Trivia</a>
+			<img src="PACE_icon.ico" style="width: 4.5em; height: 4.5em; margin: auto; float: right; margin-right: 0"/>
+		</div>
+		<div id="MainBody" class="content" style="position: relative; top: 0">
+			<h1>The Website</h1>
+			<p>This website is hosted through GitHub pages and thus can't run any server side code, meaning: everything you see here was made using html, css and javascript! 
+			Even the syntax highlighting is generated on the fly using javascript without any library. I found 
+			<a style="display: inline" href="https://dev.to/grahamthedev/impossible-css-only-js-syntax-highlighting-with-a-single-element-and-gradients-243j">this</a> blog describing how the author created a simple syntax 
+			highlighting logic using nothing but css and javascript. I've copied and modified the code to work for any width and length and worked with the &lt;code&gt; tag instead of the &lt;pre&gt; tag.</p>
+			<p>It's actually quite simple: You take a list of objects containing a regex, color and ident like this:</p>
+			<pre><code id="RegexExample">const cRegex = [
+	{
+		regex: /"(.*?)"/g, // strings
+		val: '#FFD658',
+		code: 'A'
+	},
+	{
+		regex: /(\d+\.?)/g, // numbers
+		val: ' #A7C',
+		code: 'B'
+	},
+	{
+		regex: /\b(char|short|int|long|float|double|unsigned|void|const|static|typedef|struct|[^\s]+_t)\b/g, // keywords and types
+		val: '#78dce8',
+		code: 'C'
+	},
+	{
+		regex: /(\w[A-Za-z0-9_]*)(?=\()/g, // functions
+		val: '#a6e22e',
+		code: 'D'
+	},
+	{
+		regex: /\b(sizeof|delete|switch|case|if|else|extern|return|for|while|break|continue|include)\b/g, // commands
+		val: '#E68',
+		code: 'E'
+	},
+	{
+		regex: /\b(true|false|NULL|\$)(?=[^\w])/g, // constants
+		val: '#ae81ff',
+		code: 'F'
+	},
+	{
+		regex: /([\b\s])([!=]=|[!=]==|\+\+|--|&&|\|\|<=|>=|>>|<<|\.\.\.)(?!span)([\b\s\w])/g, // operators
+		val: '#f92672',
+		code: 'G'
+	},
+	{
+		regex: /(\/\/.*)/g, // single line comment
+		val: 'gray',
+		code: 'H'
+	},
+];</code></pre>
+			<p>Then you just tokenize the input based on these regex expressions and parse them into a linear gradient using the index, length and color value given to the code:</p>
+			<pre><code id="TokenizeCode">function findTokens(line, regexObjs){
+    var rtrnText = '0'.repeat(line.length); // This string will hold the required information once tokenized
+    
+    for(x = 0; x < regexObjs.length; x++){
+        
+        let matches = [...line.matchAll(regexObjs[x].regex)];
+        
+        matches.forEach((match) => {
+			// the &lt;code&gt; tag doesn't reconize '\n' symbols as characters when drawing the linear-gradient and thus we'll need to exclude them when writing the character index
+            rtrnText = rtrnText.replaceAt(match.index-(match.index-line.slice(0, match.index).replaceAll('\n', '').length), match[0].length, regexObjs[x].code);
+        });
+    }
+    return rtrnText;
+}
+
+
+
+function convertToCSS(line, regexObjs){
+    let rtrnString = 'linear-gradient(to right, ';
+    let previousChar = '';
+    let previousColour = 'white';    
+    
+    for(z = 0; z < line.length; z++){
+        if(line[z] != previousChar){
+            
+            if(line[z] == 0){
+                rtrnString += previousColour + ' ' + z + 'ch, white ' + z + 'ch, '; 
+                previousChar = '0';
+                previousColour = 'white';
+            }else{
+                for(a = 0; a < regexObjs.length; a++){
+                    if(line[z] == regexObjs[a].code){
+                        rtrnString += previousColour + ' ' + z + 'ch, ' + regexObjs[a].val + ' ' + z + 'ch, '; 
+                        previousChar = line[z];
+                        previousColour = regexObjs[a].val;
+                    }
+                }
+            }
+        }
+    }
+    rtrnString += 'white ' + line.replaceAll('\n', '').length + 'ch)';
+    return rtrnString;
+}
+
+console.log(convertToCSS(findTokens('char *str = "Hello world!";\nint main(int argc, char **argv)\n{\n    printf("%s\n", str);\n    return 0;\n}', cRegex), cRegex));</code></pre>
+		</div>
+	</body>
+	<script>
+		SetUI();
+		var re = document.getElementById("RegexExample");
+		var tc = document.getElementById("TokenizeCode");
+		re.innerText = re.innerText.replaceAll('\t', '    ');
+		tc.innerText = tc.innerText.replaceAll('\t', '    ');
+	    re.style = "background: " + convertToCSS(findTokens(re.innerText, jsRegex), jsRegex) + "; background-clip: text; -webkit-background-clip: text; background-repeat: no-repeat; color: transparent; font-family: monospace; ";
+	    tc.style = "background: " + convertToCSS(findTokens(tc.innerText, jsRegex), jsRegex) + "; background-clip: text; -webkit-background-clip: text; background-repeat: no-repeat; color: transparent; font-family: monospace; ";
+	</script>
+</html>
