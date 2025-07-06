@@ -1,0 +1,53 @@
+:root {
+	--bg-color: #222831;
+	--middle-color: #393E46;
+	--txt-col-1: #948979;
+	--txt-col-2: #DFD0B8;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: var(--bg-color);
+	margin: 0px;
+}
+
+a {
+	color: #2222dd;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #2222ff;
+	text-decoration: underline;
+}
+
+p {
+	color: var(--txt-col-2);
+	font-family: Arial;
+}
+
+.stop-scroll {
+	overflow: hidden;
+}
+
+.navbar {
+	display: flex;
+}
+
+.navbar-item {
+	float: left;
+	margin: 10px 20px;
+}
+
+.sidebar {
+	position: absolute;
+	left: -100%;
+	transition: 1s ease;
+}
+
+.content {
+	
+}
