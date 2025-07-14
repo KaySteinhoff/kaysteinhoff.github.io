@@ -58,7 +58,15 @@ p {
 	top: 0px;
 	left: -100%;
 	transition: 1s ease;
-	display: grid;
+}
+
+.sidebar-item {
+	text-decoration: none;
+}
+
+.sidebar-item:hover {
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 .content {
@@ -66,7 +74,6 @@ p {
 }
 
 .dropdown-body {
-	position: absolute;
 	background-color: var(--middle-color);
 	display: grid;
 	max-height: 0px;
